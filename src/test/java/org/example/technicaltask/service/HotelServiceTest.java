@@ -1,9 +1,8 @@
-package service;
+package org.example.technicaltask.service;
 
 import org.example.technicaltask.config.AppProperties;
 import org.example.technicaltask.entity.Hotel;
 import org.example.technicaltask.repository.HotelRepository;
-import org.example.technicaltask.service.HotelService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -14,8 +13,6 @@ import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
-
-import java.util.*;
 
 @ExtendWith(MockitoExtension.class)
 class HotelServiceTest {
