@@ -1,6 +1,5 @@
 package org.example.technicaltask.service;
 
-import lombok.RequiredArgsConstructor;
 import org.example.technicaltask.config.AppProperties;
 import org.example.technicaltask.entity.Hotel;
 import org.example.technicaltask.repository.HotelRepository;
@@ -13,11 +12,15 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
-@RequiredArgsConstructor
 public class HotelService {
 
     private final HotelRepository repository;
     private final AppProperties appProperties;
+
+    public HotelService(HotelRepository repository, AppProperties appProperties) {
+        this.repository = repository;
+        this.appProperties = appProperties;
+    }
 
     public List<Hotel> getAll() {
         return repository.findAll();

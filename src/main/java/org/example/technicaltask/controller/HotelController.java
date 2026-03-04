@@ -3,7 +3,6 @@ package org.example.technicaltask.controller;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
-import lombok.RequiredArgsConstructor;
 import org.example.technicaltask.dto.request.CreateHotelRequest;
 import org.example.technicaltask.dto.response.HotelDetailResponse;
 import org.example.technicaltask.dto.response.HotelShortResponse;
@@ -19,12 +18,16 @@ import java.util.Set;
 
 @RestController
 @RequestMapping("${app.api.prefix}")
-@RequiredArgsConstructor
 @Validated
 public class HotelController {
 
     private final HotelService service;
     private final HotelMapper mapper;
+
+    public HotelController(HotelService service, HotelMapper mapper) {
+        this.service = service;
+        this.mapper = mapper;
+    }
 
     @GetMapping("/hotels")
     public List<HotelShortResponse> getAll() {
